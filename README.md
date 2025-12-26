@@ -37,9 +37,9 @@ After downloading, place the datasets in the following directory structure:
 spike/
 └── dataset/
     └── kg/
-        ├── amazon-book/
-        ├── amazon-movie/
-        └── yelp/
+        ├── amazon-book_kg/
+        ├── amazon-movie_kg/
+        └── yelp_kg/
 ```
 
 > **⚠️ Important note**
