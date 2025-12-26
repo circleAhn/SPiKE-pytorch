@@ -42,12 +42,6 @@ model:
   mae_coef: 0
   mae_msize: 256
   
-  #legacy
-  # text_edge_topk: 3
-
-  # tau: 0.2
-  # cl_drop_ratio: 0.5
-  # samp_func: torch 
 
 tune:
   enable: false # Whether to enable grid search to search for optimal hyperparameters
