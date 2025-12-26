@@ -1,0 +1,72 @@
+optimizer:
+  name: adam
+  lr: 1.0e-4 #1.0e-4 # not 1e-3
+  weight_decay: 0 #1.0e-5
+
+train:
+  trainer: trainer
+  epoch: 50
+  batch_size: 1024
+  save_model: true
+  loss: pairwise # bpr
+  test_step: 10 # evaluate per {test_step} epochs
+  early_stop: true
+  patient: 10
+  tensorboard: true
+  reproducible: true
+  seed: 2020
+
+test:
+  metrics: [recall, ndcg] # choose in {ndcg, recall, precision, mrr}
+  k: [10, 20, 40] # top-k
+  batch_size: 1024 # How many users per batch during validation
+  eval_at_one_forward: true
+
+data:
+  type: kg # choose in {general_cf, multi_behavior, sequential, social, kg}
+  name: book
+
+model:
+  name: spike # case-insensitive
+  layer_num: 2
+  decay_weight: 1.0e-5
+  embedding_size: 64
+  node_dropout: true
+  node_dropout_rate: 0.5
+  mess_dropout: true
+  mess_dropout_rate: 0.1
+  text_rho: 0.25
+  align_coef: 5
+  anchor_ratio: 0.1
+  num_repeat: 8
+  mae_coef: 0
+  mae_msize: 256
+  
+  #legacy
+  # text_edge_topk: 3
+
+  # tau: 0.2
+  # cl_drop_ratio: 0.5
+  # samp_func: torch 
+
+tune:
+  enable: false # Whether to enable grid search to search for optimal hyperparameters
+  hyperparameters: [layer_num, align_coef, text_rho, decay_weight, anchor_ratio, num_repeat, lr] # The name of the hyperparameter
+  layer_num: [2] # Use a list to store the search range
+  align_coef: [5]
+  text_rho: [0.25]
+  decay_weight: [1.0e-5]
+  anchor_ratio: [0.1]
+  num_repeat: [8]
+  lr: [1.0e-4]
+
+# tune:
+#   enable: true # Whether to enable grid search to search for optimal hyperparameters
+#   hyperparameters: [layer_num, align_coef, text_rho, decay_weight] # The name of the hyperparameter
+#   layer_num: [2] # Use a list to store the search range
+#   align_coef: [1, 5, 10] # [0.001]
+#   text_rho: [0.3, 0.35, 0.4]
+#   decay_weight: [1.0e-4, 1.0e-5, 1.0e-6]
+
+
+# only_test: true
