@@ -59,14 +59,3 @@ tune:
   anchor_ratio: [0.1]
   num_repeat: [8]
   lr: [1.0e-4]
-
-# tune:
-#   enable: true # Whether to enable grid search to search for optimal hyperparameters
-#   hyperparameters: [layer_num, align_coef, text_rho, decay_weight] # The name of the hyperparameter
-#   layer_num: [2] # Use a list to store the search range
-#   align_coef: [1, 5, 10] # [0.001]
-#   text_rho: [0.3, 0.35, 0.4]
-#   decay_weight: [1.0e-4, 1.0e-5, 1.0e-6]
-
-
-# only_test: true
