@@ -34,11 +34,12 @@ https://drive.google.com/drive/folders/19Q2Tpec2pcq7Y9lNjFdjTA41vwNefmp6?usp=dri
 After downloading, place the datasets in the following directory structure:
 
 ```text
-dataset/
-└── kg/
-    ├── amazon-book/
-    ├── amazon-movie/
-    └── yelp/
+spike/
+└── dataset/
+    └── kg/
+        ├── amazon-book/
+        ├── amazon-movie/
+        └── yelp/
 ```
 
 > **⚠️ Important note**
