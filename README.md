@@ -3,8 +3,6 @@ Official PyTorch implementation of **SPiKE** (**S**emantic **P**rofiles **i**nto
 
 This implementation is built upon the codebase of **SSLRec** (https://github.com/HKUDS/SSLRec).
 
-(Dataset will be released soon!)
-
 
 ## Abstract
 
@@ -29,7 +27,19 @@ SPiKE supports benchmark recommendation datasets with knowledge graphs:
 - Amazon-Movies & TV  
 - Yelp  
 
-Preprocessing scripts and expected formats are provided in `datasets/`.
+Please download the datasets (Full datasets will be released soon!) from the following link:
+
+https://drive.google.com/drive/folders/19Q2Tpec2pcq7Y9lNjFdjTA41vwNefmp6?usp=drive_link
+
+After downloading, place the datasets in the following directory structure:
+
+```text
+dataset/
+└── kg/
+    ├── amazon-book/
+    ├── amazon-movie/
+    └── yelp/
+```
 
 > **⚠️ Important note**
 > 
