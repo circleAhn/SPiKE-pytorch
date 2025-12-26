@@ -5,7 +5,7 @@ optimizer:
 
 train:
   trainer: trainer
-  epoch: 50
+  epoch: 500
   batch_size: 1024
   save_model: true
   loss: pairwise # bpr
